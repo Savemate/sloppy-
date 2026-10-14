@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloppy® — Carefully Designed Apparel</title>
+    <style>
+        /* --- RESET & VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --signature-blue: #2C5F7C; /* Dark Sky Blue */
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --bg-color: #ffffff;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--signature-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .nav-links a:hover {
+            color: var(--signature-blue);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 12rem 3rem 8rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero h1 span {
+            color: var(--signature-blue);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- PRODUCT GRID --- */
+        .products {
+            padding: 4rem 3rem 8rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .product-card {
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: #f4f4f4;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.03);
+        }
+
+        .product-name {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-price {
+            font-size: 0.9rem;
+            color: var(--signature-blue);
+            font-weight: 700;
+        }
+
+        /* --- WHY SECTION (INSPIRED BY OUTFIT) --- */
+        .why-section {
+            background-color: #fafafa;
+            padding: 8rem 3rem;
+            text-align: center;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .why-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--signature-blue);
+            margin-bottom: 2rem;
+        }
+
+        .why-section p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-dark);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* --- CONTACT / FOOTER --- */
+        .contact-section {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .contact-section h2 span {
+            color: var(--signature-blue);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem 3rem;
+            margin-top: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-links a {
+            color: var(--text-light);
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .contact-links a:hover {
+            color: var(--signature-blue);
+            border-bottom: 1px solid var(--signature-blue);
+        }
+
+        footer {
+            padding: 3rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid #eee;
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                font-size: 0.8rem;
+            }
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+            .products {
+                padding: 2rem 1.5rem 4rem;
+            }
+            .why-section, .contact-section {
+                padding: 4rem 1.5rem;
+            }
+            .grid {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#" class="nav-logo">Sloppy®</a>
+        <div class="nav-links">
+            <a href="#shop">Shop</a>
+            <a href="#why">Why</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Carefully Designed.<br><span>For the Sloppy.</span></h1>
+        <p>Signature apparel by the Sloppy team. Celebrating collective creativity and the art of being comfortable.</p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="shop" class="products">
+        <div class="section-title">The Collection</div>
+        <div class="grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- REPLACE WITH YOUR IMAGE -->
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80" alt="Sloppy Signature Tee">
+                </div>
+                <div class="product-name">Signature Tee — Dark Sky</div>
+                <div class="product-price">R 350.00</div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- REPLACE WITH YOUR IMAGE -->
+                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" alt="Sloppy Comfort Hoodie">
+                </div>
+                <div class="product-name">Comfort Hoodie — Sloppy Blue</div>
+                <div class="product-price">R 650.00</div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- REPLACE WITH YOUR IMAGE -->
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80" alt="Sloppy Relaxed Cap">
+                </div>
+                <div class="product-name">Relaxed Cap — Signature</div>
+                <div class="product-price">R 220.00</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section id="why" class="why-section">
+        <h2>Why</h2>
+        <p>Created by the Sloppy team, this store and signature collection celebrates our collective creativity and passion for apparel. Carefully designed.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+        <h2>Get in <span>Touch</span></h2>
+        <p style="color: var(--text-light); margin-bottom: 2rem;">For orders, enquiries, and collabs.</p>
+        
+        <div class="contact-links">
+            <a href="https://www.facebook.com/Sloppywear" target="_blank">Facebook</a>
+            <a href="https://wa.me/27794874559" target="_blank">WhatsApp: 079 487 4559</a>
+            <a href="tel:0794874559">Call: 079 487 4559</a>
+            <!-- Email assumed from your input -->
+            <a href="mailto:mphelamlangeni@gmail.com">Email Us</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Sloppy® — All Rights Reserved.
+    </footer>
+
+</body>
+  </html>
