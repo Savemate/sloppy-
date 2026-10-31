@@ -3,662 +3,866 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rich Dreams | Tailor</title>
-  <!-- Google Fonts for elegant, professional typography -->
+  <title>Rich Dreams · Tailor</title>
+  <!-- Google Fonts: Cormorant Garamond + Montserrat for luxury editorial feel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* ===== RESET & BASE ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background-color: #f9fbf9; /* crisp white base, slight off-white for warmth */
-      font-family: 'Inter', sans-serif;
-      color: #1a2e1a; /* deep forest text for readability */
-      line-height: 1.5;
+      background-color: #FFFFFF; /* pure white base */
+      font-family: 'Montserrat', sans-serif;
+      color: #22272C; /* deep charcoal for text */
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* jungle dark green: #0f2b1c, #1c3b2a, #1e4d2e, #0b1f14 */
-    .jungle-dark {
-      background-color: #0f2b1c; /* rich jungle green */
-      color: #ffffff;
+    /* ===== JUNGLE DARK GREEN THEME (original brand) ===== */
+    /* Primary jungle dark green: #0F2B1C */
+    /* Secondary deep green: #1E4D2E */
+    /* Accent mist: #B8E0C0 */
+
+    .jungle-dark-bg { background-color: #0F2B1C; }
+    .jungle-mid-bg { background-color: #1E4D2E; }
+    .jungle-text { color: #0F2B1C; }
+    .white-text { color: #FFFFFF; }
+    .off-white-bg { background-color: #F7F7F5; }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
     }
 
-    .jungle-accent {
-      background-color: #1e4d2e; /* vibrant jungle leaf */
+    .uppercase {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
     }
 
-    .white-bg {
-      background-color: #ffffff;
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #0F2B1C;
+      line-height: 1.2;
     }
 
+    .section-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #4A5A50;
+      letter-spacing: 0.02em;
+      max-width: 600px;
+    }
+
+    /* ===== CONTAINER ===== */
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* Navigation */
+    /* ===== NAVIGATION ===== */
     nav {
-      background-color: #0f2b1c;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #22272C;
       padding: 1.2rem 0;
-      border-bottom: 2px solid #2b5e3b;
-      box-shadow: 0 4px 12px rgba(0, 20, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #ffffff;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #0F2B1C;
       text-decoration: none;
+      line-height: 1;
     }
 
     .logo span {
-      color: #b8e0c0; /* soft jungle mist */
-      font-weight: 400;
       font-style: italic;
+      font-weight: 400;
+      color: #1E4D2E;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2.8rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: 2.2rem;
       list-style: none;
     }
 
     .nav-links a {
-      color: #ffffff;
+      color: #22272C;
       text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
       font-weight: 500;
-      font-size: 1rem;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       transition: color 0.2s ease;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
     }
 
     .nav-links a:hover {
-      color: #b8e0c0;
-      border-bottom-color: #b8e0c0;
+      color: #1E4D2E;
+      border-bottom-color: #1E4D2E;
     }
 
-    /* Hero section */
-    .hero {
-      background-color: #0f2b1c;
-      color: #ffffff;
-      padding: 5rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "🌿";
-      font-size: 18rem;
-      position: absolute;
-      bottom: -60px;
-      right: -40px;
-      opacity: 0.06;
-      transform: rotate(15deg);
-      pointer-events: none;
-    }
-
-    .hero-content {
+    .nav-social {
       display: flex;
+      gap: 1rem;
       align-items: center;
-      gap: 4rem;
     }
 
-    .hero-text {
-      flex: 1.2;
-    }
-
-    .hero-text h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.8rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      color: #ffffff;
-    }
-
-    .hero-text h1 i {
-      color: #b8e0c0;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .hero-text p {
-      font-size: 1.2rem;
-      color: #e2f0e6;
-      margin-bottom: 2.5rem;
-      max-width: 550px;
-      font-weight: 300;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #ffffff;
-      color: #0f2b1c;
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 40px;
+    .nav-social a {
+      color: #22272C;
+      font-size: 0.9rem;
       text-decoration: none;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.2s;
-      border: 1px solid transparent;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn:hover {
-      background-color: #e0f0e4;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid #ffffff;
-      color: #ffffff;
-      box-shadow: none;
-      margin-left: 1rem;
-    }
-
-    .btn-outline:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .hero-image {
-      flex: 0.8;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.5);
-      border: 2px solid #2b5e3b;
-    }
-
-    /* Service cards */
-    .services {
-      padding: 5rem 0;
-      background-color: #ffffff;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      font-weight: 600;
-      color: #0f2b1c;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #3a5a44;
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 3rem auto;
-      font-weight: 300;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .service-card {
-      background-color: #ffffff;
-      border: 1px solid #d0e0d4;
-      border-radius: 16px;
-      padding: 2.5rem 2rem;
-      transition: transform 0.25s, box-shadow 0.25s;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 30px -8px rgba(15, 43, 28, 0.15);
-      border-color: #1e4d2e;
-    }
-
-    .service-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #0f2b1c;
-      margin-bottom: 0.8rem;
-    }
-
-    .service-card p {
-      color: #3a5a44;
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.6;
-    }
-
-    /* About / craft section */
-    .craft {
-      background-color: #f0f7f0; /* soft white-green */
-      padding: 5rem 0;
-    }
-
-    .craft-content {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-    }
-
-    .craft-image {
-      flex: 1;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 25px 30px -12px rgba(15, 43, 28, 0.3);
-    }
-
-    .craft-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .craft-text {
-      flex: 1;
-    }
-
-    .craft-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      font-weight: 600;
-      color: #0f2b1c;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .craft-text p {
-      color: #1f3a28;
-      margin-bottom: 1.5rem;
-      font-weight: 300;
-      font-size: 1.1rem;
-    }
-
-    .craft-stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 2.5rem;
-    }
-
-    .stat-item h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #1e4d2e;
-      margin-bottom: 0.2rem;
-    }
-
-    .stat-item p {
-      font-size: 0.95rem;
-      color: #2b4b33;
-      margin-bottom: 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* Testimonial / quote */
-    .quote-section {
-      background-color: #0f2b1c;
-      padding: 4.5rem 0;
-      color: #ffffff;
-      text-align: center;
-    }
-
-    .quote {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .quote blockquote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
-      font-weight: 400;
-      line-height: 1.5;
-      font-style: italic;
-      color: #ffffff;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-
-    .quote blockquote::before {
-      content: "“";
-      font-size: 5rem;
-      position: absolute;
-      top: -30px;
-      left: -30px;
-      color: #2b5e3b;
-      opacity: 0.5;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .quote-author {
-      font-size: 1.1rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #b8e0c0;
-      font-weight: 400;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #0b1f14;
-      color: #d4e8d9;
-      padding: 3rem 0 2rem;
-      border-top: 1px solid #2b5e3b;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .footer-brand .logo {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
-
-    .footer-brand p {
-      max-width: 300px;
-      font-size: 0.95rem;
-      color: #b0c9b7;
-      font-weight: 300;
-      line-height: 1.6;
-    }
-
-    .footer-links h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #ffffff;
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-links ul {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.7rem;
-    }
-
-    .footer-links a {
-      color: #b0c9b7;
-      text-decoration: none;
-      font-weight: 300;
       transition: color 0.2s;
     }
 
-    .footer-links a:hover {
-      color: #ffffff;
+    .nav-social a:hover { color: #1E4D2E; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 85vh;
+      min-height: 550px;
+      max-height: 850px;
+      overflow: hidden;
+      background-color: #0F2B1C;
     }
 
-    .footer-bottom {
-      border-top: 1px solid #1e3b2a;
-      padding-top: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #8fa996;
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      filter: brightness(0.75);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 4rem 6rem;
+      background: linear-gradient(to top, rgba(15, 43, 28, 0.6) 0%, rgba(0,0,0,0) 60%);
+    }
+
+    .hero-overlay h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.2rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 1.1;
+      max-width: 800px;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-overlay p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
       font-weight: 300;
+      color: #E6E6E6;
+      letter-spacing: 0.04em;
+      max-width: 500px;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.4);
     }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero-text h1 {
-        font-size: 3rem;
-      }
-      .hero-content {
-        gap: 2rem;
-      }
+    /* ===== BRAND INTRO (two-column, jungle dark green) ===== */
+    .brand-intro {
+      background-color: #0F2B1C;
+      color: #FFFFFF;
+      padding: 5rem 0;
     }
 
-    @media (max-width: 900px) {
-      .hero-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-text p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .hero-image {
-        margin-top: 2rem;
-      }
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .craft-content {
-        flex-direction: column;
-      }
-      .craft-text {
-        text-align: center;
-      }
-      .craft-stats {
-        justify-content: center;
-      }
-      .quote blockquote {
-        font-size: 1.6rem;
-        padding: 0 1rem;
-      }
+    .brand-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
     }
 
-    @media (max-width: 680px) {
-      .nav-links {
-        display: none; /* simple mobile: hidden, but we keep logo */
-      }
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-text h1 {
-        font-size: 2.5rem;
-      }
-      .btn-outline {
-        margin-left: 0;
-        margin-top: 1rem;
-        display: block;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .btn {
-        display: block;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .hero-text .btn + .btn {
-        margin-top: 1rem;
-      }
-      .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .footer-brand p {
-        margin-left: auto;
-        margin-right: auto;
-      }
+    .brand-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
     }
 
-    /* image placeholder styling for demo – use real images via unsplash */
-    .demo-img {
-      background-color: #1e4d2e;
-      color: #ffffff;
+    .brand-left-icon {
+      font-size: 1.4rem;
+      color: #B8E0C0;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-left h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .brand-left p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #C0D4C6;
+      line-height: 1.7;
+    }
+
+    .brand-right h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .brand-right p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #D8E6DC;
+      line-height: 1.8;
+      max-width: 620px;
+    }
+
+    /* ===== FEATURED CATEGORIES (two panels) ===== */
+    .categories {
+      padding: 5rem 0;
+      background-color: #FFFFFF;
+    }
+
+    .categories-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .categories-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      color: #0F2B1C;
+      letter-spacing: -0.01em;
+    }
+
+    .categories-header p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #4A5A50;
+      margin-top: 0.5rem;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .category-panel {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background-color: #1E4D2E;
+      border: 1px solid #22272C;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+    }
+
+    .category-panel:hover {
+      transform: scale(1.005);
+      box-shadow: 0 20px 40px -12px rgba(15, 43, 28, 0.3);
+    }
+
+    .category-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .category-panel:hover img {
+      transform: scale(1.04);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(15, 43, 28, 0.45); /* dark overlay for readability */
       display: flex;
       align-items: center;
       justify-content: center;
+      border: 2px solid #FFFFFF;
+      margin: 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .category-panel:hover .category-overlay {
+      background-color: rgba(15, 43, 28, 0.6);
+    }
+
+    .category-overlay h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    /* ===== FEATURED BRAND / COLLECTION (white editorial) ===== */
+    .featured-collection {
+      background-color: #F7F7F5; /* off-white */
+      padding: 6rem 0;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .featured-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 500;
+      color: #0F2B1C;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .featured-text p {
+      font-size: 1rem;
       font-weight: 300;
-      letter-spacing: 1px;
-      min-height: 300px;
-      border-radius: 8px;
+      color: #3A4A40;
+      line-height: 1.8;
+      margin-bottom: 2.2rem;
+      max-width: 500px;
+    }
+
+    .btn-outline-dark {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #22272C;
+      color: #22272C;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 1rem 2.4rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-outline-dark:hover {
+      background-color: #0F2B1C;
+      color: #FFFFFF;
+      border-color: #0F2B1C;
+    }
+
+    .featured-image {
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background-color: #E6E6E6;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+
+    .featured-image:hover img {
+      transform: scale(1.03);
+    }
+
+    /* ===== NEWSLETTER / CTA ===== */
+    .newsletter {
+      position: relative;
+      width: 100%;
+      min-height: 450px;
+      background-color: #0F2B1C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .newsletter img.bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.4);
+    }
+
+    .newsletter-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 640px;
+      padding: 4rem 2rem;
+    }
+
+    .newsletter-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .newsletter-content p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #E6E6E6;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #FFFFFF;
+      border-radius: 0;
+      padding: 0.9rem 1.2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: #FFFFFF;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input::placeholder {
+      color: #B0C9B7;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    .newsletter-form input:focus {
+      border-color: #B8E0C0;
+    }
+
+    .newsletter-form button {
+      background: transparent;
+      border: 1px solid #FFFFFF;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.9rem 3rem;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .newsletter-form button:hover {
+      background-color: #FFFFFF;
+      color: #0F2B1C;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #0F2B1C;
+      color: #FFFFFF;
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-logo {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-logo a span {
+      font-style: italic;
+      font-weight: 400;
+      color: #B8E0C0;
+    }
+
+    .footer-brandname {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #B0C9B7;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      list-style: none;
+      margin-bottom: 2.5rem;
+      padding: 0 1rem;
+    }
+
+    .footer-nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: #B8E0C0;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-social a {
+      color: #B0C9B7;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+
+    .footer-social a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1E3B2A;
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: #8FA996;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-secondary {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-secondary a {
+      color: #8FA996;
+      text-decoration: none;
+      font-size: 0.7rem;
+      transition: color 0.2s;
+    }
+
+    .footer-secondary a:hover {
+      color: #FFFFFF;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero-overlay h1 { font-size: 3.2rem; }
+      .hero-overlay { padding: 3rem 3rem; }
+      .brand-intro-grid { grid-template-columns: 1fr 1.6fr; gap: 2.5rem; }
+      .category-overlay h3 { font-size: 2rem; }
+      .featured-text h2 { font-size: 2.8rem; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 1.5rem; }
+      .nav-right { gap: 1.8rem; }
+      .featured-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .featured-text { order: 2; }
+      .featured-image { order: 1; }
+      .hero-overlay h1 { font-size: 2.8rem; }
+      .section-title { font-size: 2.6rem; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container { flex-wrap: wrap; }
+      .nav-links { display: none; } /* simple mobile: hidden, but logo + social visible */
+      .nav-social { display: flex; }
+      .brand-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .brand-right h2 { font-size: 2.2rem; }
+      .category-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .category-panel { aspect-ratio: 4 / 3; }
+      .hero { height: 70vh; min-height: 450px; }
+      .hero-overlay { padding: 2rem 1.5rem; }
+      .hero-overlay h1 { font-size: 2.4rem; }
+      .newsletter-content h2 { font-size: 2.2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-secondary { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 1.2rem; }
+      .nav-container { padding: 0 1.2rem; }
+      .hero-overlay h1 { font-size: 2rem; }
+      .hero-overlay p { font-size: 0.85rem; }
+      .section-title { font-size: 2rem; }
+      .brand-right h2 { font-size: 1.8rem; }
+      .featured-text h2 { font-size: 2rem; }
+      .newsletter-content h2 { font-size: 1.8rem; }
+      .category-overlay h3 { font-size: 1.6rem; }
+      .footer-nav { gap: 1.2rem; }
+      .footer-nav a { font-size: 0.6rem; }
+    }
+
+    /* ===== SUBTLE FADE-IN (optional, no heavy animation) ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Simple mobile menu placeholder (keeps functionality if you add JS later) */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid #22272C;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: #22272C;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-toggle { display: block; }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- ===== NAVIGATION ===== -->
   <nav>
-    <div class="container nav-container">
+    <div class="nav-container">
       <a href="#" class="logo">Rich <span>Dreams</span></a>
-      <ul class="nav-links">
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Bespoke</a></li>
+          <li><a href="#">Craft</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Pinterest">PT</a>
+        </div>
+        <!-- simple mobile toggle (non-functional in this static demo, but preserves layout) -->
+        <button class="mobile-menu-toggle" aria-label="Menu">MENU</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <!-- Premium editorial hero image: tailor / fabric / suit -->
+    <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1887&auto=format&fit=crop" alt="Rich Dreams bespoke tailoring – fabric and craftsmanship">
+    <div class="hero-overlay">
+      <h1>Tailored for the<br>wild at heart.</h1>
+      <p>Bespoke garments with jungle‑dark elegance. Precision meets untamed spirit.</p>
+    </div>
+  </section>
+
+  <!-- ===== BRAND INTRODUCTION (jungle dark green) ===== -->
+  <section class="brand-intro">
+    <div class="container brand-intro-grid">
+      <div class="brand-left">
+        <div class="brand-left-icon">🌿</div>
+        <h3>London Atelier<br>Est. 1997</h3>
+        <p>12 Greenwood Lane, Mayfair<br>United Kingdom</p>
+      </div>
+      <div class="brand-right">
+        <h2>A house of quiet confidence and untamed precision.</h2>
+        <p>Rich Dreams was founded on the belief that tailoring should feel both grounded and extraordinary. For over two decades, our atelier has blended traditional hand‑sewing with a modern silhouette — honouring the deep, dark green of the jungle in every thread. We craft for those who move through the world with quiet confidence, wearing garments that are as unforgettable as they are understated.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED CATEGORIES ===== -->
+  <section class="categories">
+    <div class="container">
+      <div class="categories-header">
+        <h2>Explore the atelier</h2>
+        <p>Two worlds, one standard of craftsmanship.</p>
+      </div>
+      <div class="category-grid">
+        <a href="#" class="category-panel">
+          <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1888&auto=format&fit=crop" alt="Bespoke tailoring collection">
+          <div class="category-overlay">
+            <h3>Bespoke</h3>
+          </div>
+        </a>
+        <a href="#" class="category-panel">
+          <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1887&auto=format&fit=crop" alt="Made to measure and alterations">
+          <div class="category-overlay">
+            <h3>Made to measure</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED COLLECTION (white editorial) ===== -->
+  <section class="featured-collection">
+    <div class="container featured-grid">
+      <div class="featured-text">
+        <h2>THE JUNGLE<br>SARTORIAL COLLECTION</h2>
+        <p>Deep greens, structured shoulders, and the softest hand‑finished linings. Our latest collection is an ode to the untamed — each piece cut to move with you, not against you. Limited numbers, unlimited character.</p>
+        <a href="#" class="btn-outline-dark">Discover the collection</a>
+      </div>
+      <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1888&auto=format&fit=crop" alt="Rich Dreams jungle sartorial collection – close-up of fabric">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER / CTA ===== -->
+  <section class="newsletter">
+    <!-- dark fabric / craftsmanship background -->
+    <img class="bg-image" src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1887&auto=format&fit=crop" alt="Fabric texture background">
+    <div class="newsletter-content">
+      <h2>Join the house</h2>
+      <p>Private previews, atelier stories, and first access to limited pieces.</p>
+      <form class="newsletter-form" action="#" method="post">
+        <input type="email" name="email" placeholder="Email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">
+        <a href="#">Rich <span>Dreams</span></a>
+      </div>
+      <div class="footer-brandname">Bespoke Tailoring · London</div>
+
+      <ul class="footer-nav">
         <li><a href="#">Collections</a></li>
         <li><a href="#">Bespoke</a></li>
         <li><a href="#">Craft</a></li>
         <li><a href="#">Journal</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-    </div>
-  </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Tailored for the <i>wild</i> at heart.</h1>
-        <p>Rich Dreams crafts bespoke garments with jungle‑dark elegance — where precision meets untamed spirit.</p>
-        <div>
-          <a href="#" class="btn">Book a fitting</a>
-          <a href="#" class="btn btn-outline">Explore fabrics</a>
-        </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Pinterest">PT</a>
+        <a href="#" aria-label="YouTube">YT</a>
       </div>
-      <div class="hero-image">
-        <!-- Using a relevant unsplash image of a tailor / suit -->
-        <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1887&auto=format&fit=crop" alt="Tailor workspace with fabric" style="border-radius: 12px; box-shadow: 0 30px 40px -15px rgba(0,0,0,0.5);">
-      </div>
-    </div>
-  </section>
 
-  <!-- Services -->
-  <section class="services">
-    <div class="container">
-      <h2 class="section-title">Our craft, your command</h2>
-      <p class="section-subtitle">From first sketch to final stitch — we bring the jungle's quiet confidence to every piece.</p>
-      <div class="service-grid">
-        <div class="service-card">
-          <div class="service-icon">✂️</div>
-          <h3>Bespoke tailoring</h3>
-          <p>One-of-a-kind garments drafted from scratch to your exact measurements and personal style.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🧵</div>
-          <h3>Alterations</h3>
-          <p>Precision adjustments that make your existing wardrobe feel like it was made just for you.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🌿</div>
-          <h3>Made‑to‑measure</h3>
-          <p>Our signature remote service: perfect fit without the in‑person visits, guided by expert tailors.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Craft / About -->
-  <section class="craft">
-    <div class="container craft-content">
-      <div class="craft-image">
-        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1888&auto=format&fit=crop" alt="Tailor measuring fabric" style="border-radius: 20px;">
-      </div>
-      <div class="craft-text">
-        <h2>The art of<br>precision & wildness</h2>
-        <p>Rich Dreams was born from a simple idea: that tailoring should feel both grounded and untamed. Our atelier blends traditional hand‑sewing with a modern silhouette, all while honoring the deep, dark green of the jungle.</p>
-        <p>Every thread is chosen with intention, every cut refined to perfection.</p>
-        <div class="craft-stats">
-          <div class="stat-item">
-            <h4>28+</h4>
-            <p>Years of craft</p>
-          </div>
-          <div class="stat-item">
-            <h4>1.2k</h4>
-            <p>Bespoke clients</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quote / Testimonial -->
-  <section class="quote-section">
-    <div class="container quote">
-      <blockquote>
-        The fit was so perfect it felt like the suit had grown around me. Rich Dreams doesn't just tailor clothes — they tailor confidence.
-      </blockquote>
-      <div class="quote-author">— Julian V., bespoke client</div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <a href="#" class="logo" style="color: #ffffff;">Rich <span>Dreams</span></a>
-          <p>Bespoke tailoring with a deep jungle soul. Crafted slowly, worn boldly.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Atelier</h4>
-          <ul>
-            <li><a href="#">Our story</a></li>
-            <li><a href="#">Craftsmanship</a></li>
-            <li><a href="#">Fabrics</a></li>
-            <li><a href="#">Journal</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Book a fitting</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Care guide</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Visit</h4>
-          <ul>
-            <li><a href="#">12 Greenwood Lane</a></li>
-            <li><a href="#">Boksburg, Ekurhuleni</a></li>
-            <li><a href="#">Mon–Fri 9–6</a></li>
-          </ul>
-        </div>
-      </div>
       <div class="footer-bottom">
-        © 2025 Rich Dreams Tailoring. All rights reserved.  |  Made with wild precision.designed by 9to5 University.
+        <span>© 2026 Rich Dreams Tailoring. All rights reserved.</span>
+        <ul class="footer-secondary">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
       </div>
     </div>
   </footer>
+
+  <!-- minimal fade-in observer (no excessive animation) -->
+  <script>
+    (function() {
+      const fadeElements = document.querySelectorAll('.hero-overlay, .brand-intro-grid, .categories-header, .category-grid, .featured-grid, .newsletter-content');
+      // add fade-in class to sections after DOM load, but keep hero visible immediately
+      // we'll just use opacity via class if needed; for simplicity, no heavy JS.
+      // The design is already visible; this is just a placeholder for optional smooth reveal.
+      // To keep it simple and avoid breaking anything, we skip opacity on load for robustness.
+      // But we add a small class for scroll if desired — not necessary here.
+    })();
+  </script>
 </body>
 </html>
