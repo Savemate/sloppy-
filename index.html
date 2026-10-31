@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rich Dreams | Tailor</title>
+  <!-- Google Fonts for elegant, professional typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9fbf9; /* crisp white base, slight off-white for warmth */
+      font-family: 'Inter', sans-serif;
+      color: #1a2e1a; /* deep forest text for readability */
+      line-height: 1.5;
+    }
+
+    /* jungle dark green: #0f2b1c, #1c3b2a, #1e4d2e, #0b1f14 */
+    .jungle-dark {
+      background-color: #0f2b1c; /* rich jungle green */
+      color: #ffffff;
+    }
+
+    .jungle-accent {
+      background-color: #1e4d2e; /* vibrant jungle leaf */
+    }
+
+    .white-bg {
+      background-color: #ffffff;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #0f2b1c;
+      padding: 1.2rem 0;
+      border-bottom: 2px solid #2b5e3b;
+      box-shadow: 0 4px 12px rgba(0, 20, 0, 0.3);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #b8e0c0; /* soft jungle mist */
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      transition: color 0.2s ease;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: #b8e0c0;
+      border-bottom-color: #b8e0c0;
+    }
+
+    /* Hero section */
+    .hero {
+      background-color: #0f2b1c;
+      color: #ffffff;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "🌿";
+      font-size: 18rem;
+      position: absolute;
+      bottom: -60px;
+      right: -40px;
+      opacity: 0.06;
+      transform: rotate(15deg);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-text {
+      flex: 1.2;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .hero-text h1 i {
+      color: #b8e0c0;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #e2f0e6;
+      margin-bottom: 2.5rem;
+      max-width: 550px;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #0f2b1c;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background-color: #e0f0e4;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #ffffff;
+      color: #ffffff;
+      box-shadow: none;
+      margin-left: 1rem;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.5);
+      border: 2px solid #2b5e3b;
+    }
+
+    /* Service cards */
+    .services {
+      padding: 5rem 0;
+      background-color: #ffffff;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #0f2b1c;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #3a5a44;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      font-weight: 300;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: #ffffff;
+      border: 1px solid #d0e0d4;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -8px rgba(15, 43, 28, 0.15);
+      border-color: #1e4d2e;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #0f2b1c;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: #3a5a44;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* About / craft section */
+    .craft {
+      background-color: #f0f7f0; /* soft white-green */
+      padding: 5rem 0;
+    }
+
+    .craft-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .craft-image {
+      flex: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 30px -12px rgba(15, 43, 28, 0.3);
+    }
+
+    .craft-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .craft-text {
+      flex: 1;
+    }
+
+    .craft-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #0f2b1c;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .craft-text p {
+      color: #1f3a28;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+
+    .craft-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1e4d2e;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-item p {
+      font-size: 0.95rem;
+      color: #2b4b33;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Testimonial / quote */
+    .quote-section {
+      background-color: #0f2b1c;
+      padding: 4.5rem 0;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .quote {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      line-height: 1.5;
+      font-style: italic;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .quote blockquote::before {
+      content: "“";
+      font-size: 5rem;
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      color: #2b5e3b;
+      opacity: 0.5;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .quote-author {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #b8e0c0;
+      font-weight: 400;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0b1f14;
+      color: #d4e8d9;
+      padding: 3rem 0 2rem;
+      border-top: 1px solid #2b5e3b;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand .logo {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .footer-brand p {
+      max-width: 300px;
+      font-size: 0.95rem;
+      color: #b0c9b7;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .footer-links h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+      color: #b0c9b7;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e3b2a;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #8fa996;
+      font-weight: 300;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+      .hero-content {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-image {
+        margin-top: 2rem;
+      }
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .craft-content {
+        flex-direction: column;
+      }
+      .craft-text {
+        text-align: center;
+      }
+      .craft-stats {
+        justify-content: center;
+      }
+      .quote blockquote {
+        font-size: 1.6rem;
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-links {
+        display: none; /* simple mobile: hidden, but we keep logo */
+      }
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-text .btn + .btn {
+        margin-top: 1rem;
+      }
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-brand p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* image placeholder styling for demo – use real images via unsplash */
+    .demo-img {
+      background-color: #1e4d2e;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 300;
+      letter-spacing: 1px;
+      min-height: 300px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo">Rich <span>Dreams</span></a>
+      <ul class="nav-links">
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Bespoke</a></li>
+        <li><a href="#">Craft</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Tailored for the <i>wild</i> at heart.</h1>
+        <p>Rich Dreams crafts bespoke garments with jungle‑dark elegance — where precision meets untamed spirit.</p>
+        <div>
+          <a href="#" class="btn">Book a fitting</a>
+          <a href="#" class="btn btn-outline">Explore fabrics</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Using a relevant unsplash image of a tailor / suit -->
+        <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1887&auto=format&fit=crop" alt="Tailor workspace with fabric" style="border-radius: 12px; box-shadow: 0 30px 40px -15px rgba(0,0,0,0.5);">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Our craft, your command</h2>
+      <p class="section-subtitle">From first sketch to final stitch — we bring the jungle's quiet confidence to every piece.</p>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Bespoke tailoring</h3>
+          <p>One-of-a-kind garments drafted from scratch to your exact measurements and personal style.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🧵</div>
+          <h3>Alterations</h3>
+          <p>Precision adjustments that make your existing wardrobe feel like it was made just for you.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Made‑to‑measure</h3>
+          <p>Our signature remote service: perfect fit without the in‑person visits, guided by expert tailors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craft / About -->
+  <section class="craft">
+    <div class="container craft-content">
+      <div class="craft-image">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1888&auto=format&fit=crop" alt="Tailor measuring fabric" style="border-radius: 20px;">
+      </div>
+      <div class="craft-text">
+        <h2>The art of<br>precision & wildness</h2>
+        <p>Rich Dreams was born from a simple idea: that tailoring should feel both grounded and untamed. Our atelier blends traditional hand‑sewing with a modern silhouette, all while honoring the deep, dark green of the jungle.</p>
+        <p>Every thread is chosen with intention, every cut refined to perfection.</p>
+        <div class="craft-stats">
+          <div class="stat-item">
+            <h4>28+</h4>
+            <p>Years of craft</p>
+          </div>
+          <div class="stat-item">
+            <h4>1.2k</h4>
+            <p>Bespoke clients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote / Testimonial -->
+  <section class="quote-section">
+    <div class="container quote">
+      <blockquote>
+        The fit was so perfect it felt like the suit had grown around me. Rich Dreams doesn't just tailor clothes — they tailor confidence.
+      </blockquote>
+      <div class="quote-author">— Julian V., bespoke client</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="logo" style="color: #ffffff;">Rich <span>Dreams</span></a>
+          <p>Bespoke tailoring with a deep jungle soul. Crafted slowly, worn boldly.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Atelier</h4>
+          <ul>
+            <li><a href="#">Our story</a></li>
+            <li><a href="#">Craftsmanship</a></li>
+            <li><a href="#">Fabrics</a></li>
+            <li><a href="#">Journal</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Book a fitting</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Care guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#">12 Greenwood Lane</a></li>
+            <li><a href="#">Boksburg, Ekurhuleni</a></li>
+            <li><a href="#">Mon–Fri 9–6</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 Rich Dreams Tailoring. All rights reserved.  |  Made with wild precision.designed by 9to5 University.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
