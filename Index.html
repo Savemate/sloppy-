@@ -1,219 +1,664 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sloppy® — Apparel Store</title>
-<meta name="description" content="Sloppy® — carefully designed apparel. Umduvulo tees, Sloppy signature pieces, and more.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rich Dreams | Tailor</title>
+  <!-- Google Fonts for elegant, professional typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9fbf9; /* crisp white base, slight off-white for warmth */
+      font-family: 'Inter', sans-serif;
+      color: #1a2e1a; /* deep forest text for readability */
+      line-height: 1.5;
+    }
+
+    /* jungle dark green: #0f2b1c, #1c3b2a, #1e4d2e, #0b1f14 */
+    .jungle-dark {
+      background-color: #0f2b1c; /* rich jungle green */
+      color: #ffffff;
+    }
+
+    .jungle-accent {
+      background-color: #1e4d2e; /* vibrant jungle leaf */
+    }
+
+    .white-bg {
+      background-color: #ffffff;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #0f2b1c;
+      padding: 1.2rem 0;
+      border-bottom: 2px solid #2b5e3b;
+      box-shadow: 0 4px 12px rgba(0, 20, 0, 0.3);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #b8e0c0; /* soft jungle mist */
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      transition: color 0.2s ease;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: #b8e0c0;
+      border-bottom-color: #b8e0c0;
+    }
+
+    /* Hero section */
+    .hero {
+      background-color: #0f2b1c;
+      color: #ffffff;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "🌿";
+      font-size: 18rem;
+      position: absolute;
+      bottom: -60px;
+      right: -40px;
+      opacity: 0.06;
+      transform: rotate(15deg);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-text {
+      flex: 1.2;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .hero-text h1 i {
+      color: #b8e0c0;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #e2f0e6;
+      margin-bottom: 2.5rem;
+      max-width: 550px;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #0f2b1c;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background-color: #e0f0e4;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #ffffff;
+      color: #ffffff;
+      box-shadow: none;
+      margin-left: 1rem;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.5);
+      border: 2px solid #2b5e3b;
+    }
+
+    /* Service cards */
+    .services {
+      padding: 5rem 0;
+      background-color: #ffffff;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #0f2b1c;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #3a5a44;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      font-weight: 300;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: #ffffff;
+      border: 1px solid #d0e0d4;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -8px rgba(15, 43, 28, 0.15);
+      border-color: #1e4d2e;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #0f2b1c;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: #3a5a44;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* About / craft section */
+    .craft {
+      background-color: #f0f7f0; /* soft white-green */
+      padding: 5rem 0;
+    }
+
+    .craft-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .craft-image {
+      flex: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 30px -12px rgba(15, 43, 28, 0.3);
+    }
+
+    .craft-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .craft-text {
+      flex: 1;
+    }
+
+    .craft-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #0f2b1c;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .craft-text p {
+      color: #1f3a28;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+
+    .craft-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1e4d2e;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-item p {
+      font-size: 0.95rem;
+      color: #2b4b33;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Testimonial / quote */
+    .quote-section {
+      background-color: #0f2b1c;
+      padding: 4.5rem 0;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .quote {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      line-height: 1.5;
+      font-style: italic;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .quote blockquote::before {
+      content: "“";
+      font-size: 5rem;
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      color: #2b5e3b;
+      opacity: 0.5;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .quote-author {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #b8e0c0;
+      font-weight: 400;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0b1f14;
+      color: #d4e8d9;
+      padding: 3rem 0 2rem;
+      border-top: 1px solid #2b5e3b;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand .logo {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .footer-brand p {
+      max-width: 300px;
+      font-size: 0.95rem;
+      color: #b0c9b7;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .footer-links h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+      color: #b0c9b7;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1e3b2a;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #8fa996;
+      font-weight: 300;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+      .hero-content {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-image {
+        margin-top: 2rem;
+      }
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .craft-content {
+        flex-direction: column;
+      }
+      .craft-text {
+        text-align: center;
+      }
+      .craft-stats {
+        justify-content: center;
+      }
+      .quote blockquote {
+        font-size: 1.6rem;
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-links {
+        display: none; /* simple mobile: hidden, but we keep logo */
+      }
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-text .btn + .btn {
+        margin-top: 1rem;
+      }
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-brand p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* image placeholder styling for demo – use real images via unsplash */
+    .demo-img {
+      background-color: #1e4d2e;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 300;
+      letter-spacing: 1px;
+      min-height: 300px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-
-<!-- ANNOUNCEMENT -->
-<div class="announce">Free shipping over <strong>R800</strong> <span class="dot">◆</span> WhatsApp orders: <strong>079 487 4559</strong></div>
-
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <img src="https://i.imgur.com/hIi4UrM.png" alt="Sloppy® Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:var(--display);font-size:1.9rem;color:#fff;text-transform:uppercase;letter-spacing:.02em;\'>Sloppy<sup style=\'color:var(--gold);font-size:.4em;vertical-align:super;margin-left:2px;\'>®</sup></span>';">
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#shop">Shop</a>
-      <a href="#coming">Coming Soon</a>
-      <a href="#why">Why</a>
-      <a href="#contact">Contact</a>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo">Rich <span>Dreams</span></a>
+      <ul class="nav-links">
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Bespoke</a></li>
+        <li><a href="#">Craft</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </div>
-    <div class="nav-actions">
-      <button class="icon-btn" onclick="focusSearch()" aria-label="Search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      </button>
-      <button class="icon-btn" onclick="openWishlist()" aria-label="Wishlist">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-        <span class="count" id="wishCount" data-empty="true"></span>
-      </button>
-      <button class="icon-btn" onclick="openCart()" aria-label="Cart">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        <span class="count" id="cartCount" data-empty="true"></span>
-      </button>
-      <button class="hamburger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <span class="hero-eyebrow reveal">Sloppy® — Est. 2020</span>
-  <h1 class="reveal">Built <em>Different.</em></h1>
-  <p class="hero-sub reveal">More Than Clothing. It's a Mindset.</p>
-  <p class="hero-desc reveal">Signature apparel by the Sloppy team. Umduvulo tees, Sloppy originals, and pieces made to be lived in.</p>
-  <a href="#shop" class="hero-cta reveal">
-    Shop the Collection
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </a>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee"><div class="marquee-track" id="marqueeTrack"></div></div>
-
-<!-- SHOP -->
-<section class="shop" id="shop">
-  <div class="section-head reveal">
-    <div class="titles">
-      <span class="eyebrow">Collection</span>
-      <h2>The Signature Line</h2>
-      <p>Carefully considered pieces, made to be lived in.</p>
-    </div>
-  </div>
-  <div class="controls reveal">
-    <div class="filter-chips" id="filterChips">
-      <button class="chip active" data-filter="All">All</button>
-      <button class="chip" data-filter="Umduvulo">Umduvulo</button>
-      <button class="chip" data-filter="Sloppy">Sloppy</button>
-      <button class="chip" data-filter="Pre-order">Pre-order</button>
-    </div>
-    <div class="controls-right">
-      <div class="search-wrap">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <input type="text" class="search-input" id="searchInput" placeholder="Search products..." oninput="onSearch(this.value)">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Tailored for the <i>wild</i> at heart.</h1>
+        <p>Rich Dreams crafts bespoke garments with jungle‑dark elegance — where precision meets untamed spirit.</p>
+        <div>
+          <a href="#" class="btn">Book a fitting</a>
+          <a href="#" class="btn btn-outline">Explore fabrics</a>
+        </div>
       </div>
-      <select class="sort-select" id="sortSelect" onchange="onSort(this.value)">
-        <option value="featured">Featured</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-        <option value="name">Name: A–Z</option>
-      </select>
-    </div>
-  </div>
-  <div class="grid" id="productGrid"></div>
-</section>
-
-<!-- COMING SOON -->
-<section class="coming-soon" id="coming">
-  <div class="cs-card reveal">
-    <div>
-      <span class="cs-tag">Coming Soon</span>
-      <h3>Sabali <em>Watch Range</em></h3>
-      <p>A considered timepiece collection from Sloppy. Quietly arriving — join the list to hear first.</p>
-    </div>
-    <a href="https://wa.me/27794874559?text=Hi%20Sloppy!%20Please%20notify%20me%20when%20the%20Sabali%20watch%20range%20drops." target="_blank" rel="noopener" class="cs-btn">
-      Notify me
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- EDITORIAL -->
-<section class="editorial reveal" id="why">
-  <div class="editorial-inner">
-    <span class="editorial-eyebrow">Why Sloppy</span>
-    <p>Created by the <em>Sloppy team</em>, this store and signature collection celebrates our collective creativity and passion for apparel. Carefully designed, quietly confident.</p>
-    <div class="editorial-sign">— The Sloppy Team</div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter reveal">
-  <div>
-    <h2>Join the <em>quiet</em> side.</h2>
-    <p>Early access to drops, restocks, and the occasional note from the studio.</p>
-  </div>
-  <div id="nlWrap">
-    <form class="nl-form" onsubmit="subscribe(event)">
-      <div class="nl-input-wrap">
-        <input type="email" class="nl-input" id="nlEmail" placeholder="your@email.com" required>
-        <button type="submit" class="nl-submit">
-          Subscribe
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+      <div class="hero-image">
+        <!-- Using a relevant unsplash image of a tailor / suit -->
+        <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1887&auto=format&fit=crop" alt="Tailor workspace with fabric" style="border-radius: 12px; box-shadow: 0 30px 40px -15px rgba(0,0,0,0.5);">
       </div>
-      <small class="nl-note">No spam. Unsubscribe anytime.</small>
-    </form>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-inner reveal">
-    <span class="eyebrow">Get in touch</span>
-    <h2>Say <em>hello.</em></h2>
-    <p>For orders, enquiries, and collabs.</p>
-    <div class="contact-grid">
-      <a href="https://www.facebook.com/sloppywear" target="_blank" rel="noopener" class="contact-card">
-        <span class="label">Facebook</span><span class="value">/Sloppywear</span><span class="arrow">→</span>
-      </a>
-      <a href="https://wa.me/27794874559" target="_blank" rel="noopener" class="contact-card">
-        <span class="label">WhatsApp</span><span class="value">079 487 4559</span><span class="arrow">→</span>
-      </a>
-      <a href="tel:0794874559" class="contact-card">
-        <span class="label">Call</span><span class="value">079 487 4559</span><span class="arrow">→</span>
-      </a>
-      <a href="mailto:mphelamlangeni@gmail.com" class="contact-card">
-        <span class="label">Email</span><span class="value">mphelamlangeni</span><span class="arrow">→</span>
-      </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <span class="f-logo">
-    <img src="https://i.imgur.com/hIi4UrM.png" alt="Sloppy® Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:var(--display);font-size:1.5rem;color:#fff;text-transform:uppercase;letter-spacing:.02em;\'>Sloppy<sup style=\'color:var(--gold);font-size:.4em;vertical-align:super;margin-left:2px;\'>®</sup></span>';">
-  </span>
-  <span>© 2026 Sloppy® — All Rights Reserved.</span>
-</footer>
+  <!-- Services -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Our craft, your command</h2>
+      <p class="section-subtitle">From first sketch to final stitch — we bring the jungle's quiet confidence to every piece.</p>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Bespoke tailoring</h3>
+          <p>One-of-a-kind garments drafted from scratch to your exact measurements and personal style.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🧵</div>
+          <h3>Alterations</h3>
+          <p>Precision adjustments that make your existing wardrobe feel like it was made just for you.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Made‑to‑measure</h3>
+          <p>Our signature remote service: perfect fit without the in‑person visits, guided by expert tailors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- OVERLAY -->
-<div class="overlay" id="overlay" onclick="closeAll()"></div>
+  <!-- Craft / About -->
+  <section class="craft">
+    <div class="container craft-content">
+      <div class="craft-image">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1888&auto=format&fit=crop" alt="Tailor measuring fabric" style="border-radius: 20px;">
+      </div>
+      <div class="craft-text">
+        <h2>The art of<br>precision & wildness</h2>
+        <p>Rich Dreams was born from a simple idea: that tailoring should feel both grounded and untamed. Our atelier blends traditional hand‑sewing with a modern silhouette, all while honoring the deep, dark green of the jungle.</p>
+        <p>Every thread is chosen with intention, every cut refined to perfection.</p>
+        <div class="craft-stats">
+          <div class="stat-item">
+            <h4>28+</h4>
+            <p>Years of craft</p>
+          </div>
+          <div class="stat-item">
+            <h4>1.2k</h4>
+            <p>Bespoke clients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- CART DRAWER -->
-<aside class="drawer" id="cartDrawer" aria-hidden="true">
-  <div class="drawer-head">
-    <h3>Your Bag <span id="cartDrawerCount">(0)</span></h3>
-    <button class="close-btn" onclick="closeCart()" aria-label="Close">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <div class="ship-bar" id="shipBar" style="display:none">
-    <div class="ship-text" id="shipText"></div>
-    <div class="ship-track"><div class="ship-fill" id="shipFill"></div></div>
-  </div>
-  <div class="drawer-body" id="cartBody"></div>
-  <div class="drawer-foot" id="cartFoot" style="display:none">
-    <div class="subtotal"><span>Subtotal</span><strong id="subtotal">R0</strong></div>
-    <button class="checkout-btn" onclick="checkout()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Checkout via WhatsApp
-    </button>
-    <small>You'll be redirected to WhatsApp to confirm.</small>
-  </div>
-</aside>
+  <!-- Quote / Testimonial -->
+  <section class="quote-section">
+    <div class="container quote">
+      <blockquote>
+        The fit was so perfect it felt like the suit had grown around me. Rich Dreams doesn't just tailor clothes — they tailor confidence.
+      </blockquote>
+      <div class="quote-author">— Julian V., bespoke client</div>
+    </div>
+  </section>
 
-<!-- WISHLIST DRAWER -->
-<aside class="drawer" id="wishDrawer" aria-hidden="true">
-  <div class="drawer-head">
-    <h3>Wishlist <span id="wishDrawerCount">(0)</span></h3>
-    <button class="close-btn" onclick="closeWishlist()" aria-label="Close">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <div class="drawer-body" id="wishBody"></div>
-</aside>
-
-<!-- MODAL -->
-<div class="modal" id="productModal">
-  <div class="modal-inner" id="modalInner"></div>
-</div>
-
-<!-- TOAST -->
-<div class="toast" id="toast">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-  <span id="toastMsg">Added</span>
-</div>
-
-<script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="logo" style="color: #ffffff;">Rich <span>Dreams</span></a>
+          <p>Bespoke tailoring with a deep jungle soul. Crafted slowly, worn boldly.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Atelier</h4>
+          <ul>
+            <li><a href="#">Our story</a></li>
+            <li><a href="#">Craftsmanship</a></li>
+            <li><a href="#">Fabrics</a></li>
+            <li><a href="#">Journal</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Book a fitting</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Care guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#">777 Estate</a></li>
+            <li><a href="#">Boksburg North, Ekurhuleni</a></li>
+            <li><a href="#">Mon–Fri 9–6</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 Rich Dreams Tailoring. All rights reserved.  |  Made with wild precision.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
