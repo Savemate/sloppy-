@@ -21,19 +21,15 @@
     }
 
     body {
-      background-color: #FFFFFF; /* pure white base */
+      background-color: #FFFFFF;
       font-family: 'Montserrat', sans-serif;
-      color: #22272C; /* deep charcoal for text */
+      color: #22272C;
       line-height: 1.6;
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ===== JUNGLE DARK GREEN THEME (original brand) ===== */
-    /* Primary jungle dark green: #0F2B1C */
-    /* Secondary deep green: #1E4D2E */
-    /* Accent mist: #B8E0C0 */
-
+    /* ===== JUNGLE DARK GREEN THEME ===== */
     .jungle-dark-bg { background-color: #0F2B1C; }
     .jungle-mid-bg { background-color: #1E4D2E; }
     .jungle-text { color: #0F2B1C; }
@@ -269,6 +265,171 @@
       max-width: 620px;
     }
 
+    /* ===== CONTACT DETAILS BAR (new) ===== */
+    .contact-bar {
+      background-color: #0F2B1C;
+      border-top: 1px solid #1E3B2A;
+      padding: 2.5rem 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      color: #FFFFFF;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .contact-item .label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #B8E0C0;
+    }
+
+    .contact-item .value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #FFFFFF;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .contact-item .value a {
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item .value a:hover {
+      color: #B8E0C0;
+    }
+
+    /* ===== SERVICES SECTION (new) ===== */
+    .services {
+      background-color: #F7F7F5;
+      padding: 5rem 0;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .services-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      color: #0F2B1C;
+      letter-spacing: -0.01em;
+    }
+
+    .services-header p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #4A5A50;
+      margin-top: 0.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E6E6E6;
+      padding: 2.5rem 2rem;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .service-card:hover {
+      border-color: #0F2B1C;
+      box-shadow: 0 12px 30px -15px rgba(15, 43, 28, 0.2);
+    }
+
+    .service-card .service-icon {
+      font-size: 1.6rem;
+      color: #1E4D2E;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #0F2B1C;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: #4A5A50;
+      line-height: 1.7;
+    }
+
+    /* ===== ENQUIRIES BANNER (new) ===== */
+    .enquiries {
+      background-color: #0F2B1C;
+      padding: 4rem 0;
+      text-align: center;
+      border-top: 1px solid #1E3B2A;
+    }
+
+    .enquiries h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .enquiries p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #D8E6DC;
+      margin-bottom: 2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .enquiries .contact-methods {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+
+    .enquiries .contact-methods a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.8rem 1.8rem;
+      border: 1px solid #B8E0C0;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .enquiries .contact-methods a:hover {
+      background-color: #B8E0C0;
+      color: #0F2B1C;
+    }
+
     /* ===== FEATURED CATEGORIES (two panels) ===== */
     .categories {
       padding: 5rem 0;
@@ -333,7 +494,7 @@
     .category-overlay {
       position: absolute;
       inset: 0;
-      background-color: rgba(15, 43, 28, 0.45); /* dark overlay for readability */
+      background-color: rgba(15, 43, 28, 0.45);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -357,9 +518,9 @@
       padding: 0 1rem;
     }
 
-    /* ===== FEATURED BRAND / COLLECTION (white editorial) ===== */
+    /* ===== FEATURED BRAND / COLLECTION ===== */
     .featured-collection {
-      background-color: #F7F7F5; /* off-white */
+      background-color: #F7F7F5;
       padding: 6rem 0;
     }
 
@@ -648,6 +809,7 @@
       .brand-intro-grid { grid-template-columns: 1fr 1.6fr; gap: 2.5rem; }
       .category-overlay h3 { font-size: 2rem; }
       .featured-text h2 { font-size: 2.8rem; }
+      .contact-grid { grid-template-columns: repeat(2, 1fr); gap: 1.8rem; }
     }
 
     @media (max-width: 900px) {
@@ -658,11 +820,12 @@
       .featured-image { order: 1; }
       .hero-overlay h1 { font-size: 2.8rem; }
       .section-title { font-size: 2.6rem; }
+      .services-grid { grid-template-columns: 1fr; max-width: 600px; }
     }
 
     @media (max-width: 768px) {
       .nav-container { flex-wrap: wrap; }
-      .nav-links { display: none; } /* simple mobile: hidden, but logo + social visible */
+      .nav-links { display: none; }
       .nav-social { display: flex; }
       .brand-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
       .brand-right h2 { font-size: 2.2rem; }
@@ -674,6 +837,9 @@
       .newsletter-content h2 { font-size: 2.2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .footer-secondary { justify-content: center; }
+      .enquiries h2 { font-size: 2rem; }
+      .enquiries .contact-methods { gap: 1.2rem; }
+      .enquiries .contact-methods a { padding: 0.7rem 1.2rem; font-size: 0.75rem; }
     }
 
     @media (max-width: 480px) {
@@ -688,9 +854,13 @@
       .category-overlay h3 { font-size: 1.6rem; }
       .footer-nav { gap: 1.2rem; }
       .footer-nav a { font-size: 0.6rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-item .value { font-size: 0.88rem; }
+      .services-header h2 { font-size: 2.2rem; }
+      .service-card { padding: 2rem 1.5rem; }
+      .service-card h3 { font-size: 1.6rem; }
     }
 
-    /* ===== SUBTLE FADE-IN (optional, no heavy animation) ===== */
     .fade-in {
       opacity: 0;
       transform: translateY(12px);
@@ -700,23 +870,6 @@
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    /* Simple mobile menu placeholder (keeps functionality if you add JS later) */
-    .mobile-menu-toggle {
-      display: none;
-      background: none;
-      border: 1px solid #22272C;
-      padding: 0.4rem 0.8rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      color: #22272C;
-    }
-
-    @media (max-width: 768px) {
-      .mobile-menu-toggle { display: block; }
     }
   </style>
 </head>
@@ -729,23 +882,19 @@
         <ul class="nav-links">
           <li><a href="#">Collections</a></li>
           <li><a href="#">Bespoke</a></li>
-          <li><a href="#">Craft</a></li>
-          <li><a href="#">Journal</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-social">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Pinterest">PT</a>
+          <a href="https://wa.me/27679940230" aria-label="WhatsApp">WA</a>
+          <a href="mailto:shantellmokoena5@gmail.com" aria-label="Email">@</a>
         </div>
-        <!-- simple mobile toggle (non-functional in this static demo, but preserves layout) -->
-        <button class="mobile-menu-toggle" aria-label="Menu">MENU</button>
       </div>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <!-- Premium editorial hero image: tailor / fabric / suit -->
     <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1887&auto=format&fit=crop" alt="Rich Dreams bespoke tailoring – fabric and craftsmanship">
     <div class="hero-overlay">
       <h1>Tailored for the<br>wild at heart.</h1>
@@ -758,12 +907,68 @@
     <div class="container brand-intro-grid">
       <div class="brand-left">
         <div class="brand-left-icon">🌿</div>
-        <h3>Boksburg North<br>Est. 1997</h3>
-        <p>Ekurhuleni,East Rand<br>Boksburg North</p>
+        <h3>Rich Dreams Atelier<br>Est. 1997</h3>
+        <p>14 Angelo Place, Salerno Village<br>Beyers Park, South Africa</p>
       </div>
       <div class="brand-right">
         <h2>A house of quiet confidence and untamed precision.</h2>
         <p>Rich Dreams was founded on the belief that tailoring should feel both grounded and extraordinary. For over two decades, our atelier has blended traditional hand‑sewing with a modern silhouette — honouring the deep, dark green of the jungle in every thread. We craft for those who move through the world with quiet confidence, wearing garments that are as unforgettable as they are understated.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT DETAILS BAR (new) ===== -->
+  <section class="contact-bar" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-item">
+        <span class="label">Call</span>
+        <span class="value"><a href="tel:0679940230">067 994 0230</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="label">WhatsApp</span>
+        <span class="value"><a href="https://wa.me/27679940230" target="_blank" rel="noopener">067 994 0230</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="label">Email</span>
+        <span class="value"><a href="mailto:shantellmokoena5@gmail.com">shantellmokoena5@gmail.com</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="label">Address</span>
+        <span class="value">14 Angelo Place, Salerno Village, Beyers Park</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION (new) ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <h2>Our Services</h2>
+        <p>Crafted with precision, delivered with care.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Sewing Clothes</h3>
+          <p>Bespoke garments and alterations crafted to your exact measurements — from everyday wear to special occasion pieces.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🖨️</div>
+          <h3>Printing Services</h3>
+          <p>Custom printing on t-shirts, cups, and many more. Personalise your items with high-quality prints that last.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ENQUIRIES BANNER (new) ===== -->
+  <section class="enquiries">
+    <div class="container">
+      <h2>For Enquiries</h2>
+      <p>Reach us directly — we're here to help with your bespoke order.</p>
+      <div class="contact-methods">
+        <a href="tel:0679940230">📞 Call 067 994 0230</a>
+        <a href="https://wa.me/27679940230" target="_blank" rel="noopener">💬 WhatsApp 067 994 0230</a>
       </div>
     </div>
   </section>
@@ -792,7 +997,7 @@
     </div>
   </section>
 
-  <!-- ===== FEATURED COLLECTION (white editorial) ===== -->
+  <!-- ===== FEATURED COLLECTION ===== -->
   <section class="featured-collection">
     <div class="container featured-grid">
       <div class="featured-text">
@@ -808,7 +1013,6 @@
 
   <!-- ===== NEWSLETTER / CTA ===== -->
   <section class="newsletter">
-    <!-- dark fabric / craftsmanship background -->
     <img class="bg-image" src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1887&auto=format&fit=crop" alt="Fabric texture background">
     <div class="newsletter-content">
       <h2>Join the house</h2>
@@ -826,20 +1030,19 @@
       <div class="footer-logo">
         <a href="#">Rich <span>Dreams</span></a>
       </div>
-      <div class="footer-brandname">R D Tailoring · Boksburg</div>
+      <div class="footer-brandname">Bespoke Tailoring · Beyers Park</div>
 
       <ul class="footer-nav">
         <li><a href="#">Collections</a></li>
         <li><a href="#">Bespoke</a></li>
-        <li><a href="#">Craft</a></li>
-        <li><a href="#">Journal</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="footer-social">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="Pinterest">PT</a>
-        <a href="#" aria-label="YouTube">YT</a>
+        <a href="https://wa.me/27679940230" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
+        <a href="mailto:shantellmokoena5@gmail.com" aria-label="Email">@</a>
+        <a href="tel:0679940230" aria-label="Call">📞</a>
       </div>
 
       <div class="footer-bottom">
@@ -852,17 +1055,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- minimal fade-in observer (no excessive animation) -->
-  <script>
-    (function() {
-      const fadeElements = document.querySelectorAll('.hero-overlay, .brand-intro-grid, .categories-header, .category-grid, .featured-grid, .newsletter-content');
-      // add fade-in class to sections after DOM load, but keep hero visible immediately
-      // we'll just use opacity via class if needed; for simplicity, no heavy JS.
-      // The design is already visible; this is just a placeholder for optional smooth reveal.
-      // To keep it simple and avoid breaking anything, we skip opacity on load for robustness.
-      // But we add a small class for scroll if desired — not necessary here.
-    })();
-  </script>
 </body>
 </html>
